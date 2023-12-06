@@ -51,7 +51,7 @@ export default function Layout({children}: LayoutProps) {
                 className={`m-auto ${styles.nav}`}>
           <Container fluid={true}>
             <Navbar.Brand>
-              TEST_3
+              TEST_4
               {socialIcons.map(i =>
                 <a href={i.url} className="">
                   <img alt={i.name} src={i.img}/>
