@@ -6,6 +6,9 @@
 const nextConfig = {
   output: 'export',
 
+  // https://stackoverflow.com/a/68691247
+  assetPrefix: './',
+
   // Optional: Change links `/me` -> `/me/` and emit `/me.html` -> `/me/index.html`
   // trailingSlash: true,
 
