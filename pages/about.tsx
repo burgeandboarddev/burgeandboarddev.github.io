@@ -2,23 +2,26 @@ import styles from '../styles/Styles.module.css';
 import {NextPageWithLayout} from "./_app";
 import Layout from "../components/layout";
 import React from 'react';
+import Head from "next/head";
 
 const About: NextPageWithLayout = () => {
   return (
     <>
-      <div className={`${styles.about_block} text-center`}>
+      <div className={`${styles.about_block} row text-center justify-content-center p-5 m-5`}>
         <h1>The Creator</h1>
+        <hr/>
         <div>
-          CARRIE BURGE - CHEESE LOVER, ARTIST, WIFE + DOG MOM
+          <b>CARRIE BURGE</b> - CHEESE LOVER, ARTIST, WIFE + DOG MOM
         </div>
-        <div className="text-center">
+        <div className="text-center p-4">
           <img src="/img/carrie.webp" alt="carrie" className={styles.carrie_img}/>
         </div>
-        <div>
+        <div className={`col-md-5 ${styles.about_text}`}>
           In my early 20's, I discovered I had an intense love for food and entertaining. I started hosting parties for
           my
           friends and family- my main focus being on the food that was served. I loved making people feel full and happy
           and always wanted to be the perfect hostess!
+          <br/>
           <br/>
           The spark of inspiration for the grazing boards and tables was born while I was on my honeymoon in Spain. I
           remember the first tapas bar I walked into - a massive spread of meats and cheeses and all things amazing! I
@@ -29,9 +32,11 @@ const About: NextPageWithLayout = () => {
           of
           small gatherings, parties, and events.
           <br/>
+          <br/>
           What I love most about these boards and tables is that the possibilities for creativity and uniqueness are
           absolutely endless. I have created a few custom boards that I think are fun and will fit most every style of
           grazer.
+          <br/>
           <br/>
           -Carrie ❤
         </div>

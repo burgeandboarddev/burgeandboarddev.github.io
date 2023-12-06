@@ -2,6 +2,7 @@ import styles from '../styles/Styles.module.css';
 import {NextPageWithLayout} from "./_app";
 import Layout from '../components/layout';
 import React from 'react';
+import Head from "next/head";
 
 const Index: NextPageWithLayout = () => {
   return (
@@ -18,11 +19,11 @@ const Index: NextPageWithLayout = () => {
 
       <div className={`container ${styles.triple}`}>
         <div className="row">
-          <div className="col">
-            <img className={styles.col_img} src="/img/home-left.webp" alt="home-left"/>
+          <div className={`col-sm-4 p-0 text-center`}>
+            <img className={`${styles.col_img} ${styles.home_left}`} alt="home-left"/>
           </div>
-          <div className={`col d-flex align-items-center ${styles.bg_pink} ${styles.variety}`}>
-            <div className={`${styles.middle}`}>
+          <div className={`col-sm-4 d-flex align-items-center ${styles.bg_pink} ${styles.variety}`}>
+            <div className={`p-4 ${styles.middle}`}>
               <p className={styles.line}>a variety of handcrafted</p>
               <p className={`${styles.line} ${styles.em}`}>
                 boards, tables + boxes-
@@ -35,14 +36,14 @@ const Index: NextPageWithLayout = () => {
                 style
               </p>
               <p className="text-center">
-                <a className={`btn btn-light ${styles.get_pricing}`}>
+                <a href='/pricing' className={`btn btn-light ${styles.get_pricing}`}>
                   Get Pricing
                 </a>
               </p>
             </div>
           </div>
-          <div className="col">
-            <img className={styles.col_img} src="/img/home-right.webp" alt="home-right"/>
+          <div className={`col-sm-4 p-0 text-center`}>
+            <img className={`${styles.col_img} ${styles.home_right}`} alt="home-right"/>
           </div>
         </div>
       </div>
