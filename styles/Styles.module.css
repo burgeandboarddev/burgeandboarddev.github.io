@@ -1,0 +1,87 @@
+.main {
+    font-family: brandon-grotesque-light, sans-serif;
+}
+
+.main h1 {
+    font-family: brandon-grotesque-black, sans-serif;
+}
+
+.main h3 {
+    font-family: brandon-grotesque-black, sans-serif;
+}
+
+.nav {
+    font-family: brandon-grotesque-light, sans-serif;
+    font-size: small;
+}
+
+.content {
+
+}
+
+.grazing {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+}
+
+.grazing.pink {
+    color: #E8D0C8;
+}
+
+.triple {
+    width: calc(100% - 80px - 80px);
+}
+
+.col_img {
+    width: 100%;
+}
+
+.variety {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    font-size: 40px;
+}
+
+.variety > .middle {
+    margin-left: 16px;
+}
+
+.variety > .middle > .line {
+    margin-bottom: 0;
+    padding: 0;
+    line-height: 1.3em;
+}
+
+.em {
+    font-style: italic;
+}
+
+.white {
+    color: white;
+}
+
+.bg_pink {
+    background-color: #E8D0C8;
+}
+
+.get_pricing {
+    font-family: raleway, sans-serif !important;
+    font-size: 18px !important;
+    margin-top: 20px;
+}
+
+.subscribe_for_updates {
+
+}
+
+.subscribe_now_btn {
+
+}
+
+.about_block {
+    background-color: #E8D0C8;
+}
+
+.carrie_img {
+    border-radius: 50%;
+}
