@@ -17,8 +17,10 @@ const nextConfig = {
    * Set base path. This is usually the slug of your repository.
    *
    * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
+   *
+   * N.B. For why we use "/.", see https://github.com/gregrickaby/nextjs-github-pages/issues/10#issuecomment-1130545988
    */
-  basePath: "/nextjs-github-pages",
+  basePath: "/.",
 
   /**
    * Disable server-based image optimization. Next.js does not support
