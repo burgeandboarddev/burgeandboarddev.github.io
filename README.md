@@ -28,6 +28,6 @@
 * [x] Social buttons
 * [x] Mobile homepage
 * [x] About page
-* [ ] Fix github pages deployment
+* [x] Fix github pages deployment
+* [x] [Deploy Next.js to GitHub Pages with GitHub Actions](https://github.com/gregrickaby/nextjs-github-pages)
 * [ ] [Backend-less Google forms](https://medium.com/swlh/creating-a-backend-less-contact-form-using-google-forms-852157dcbdbb)
-* [ ] [Deploy Next.js to GitHub Pages with GitHub Actions](https://github.com/gregrickaby/nextjs-github-pages)
