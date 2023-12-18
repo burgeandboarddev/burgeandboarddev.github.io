@@ -20,7 +20,7 @@ const nextConfig = {
    *
    * N.B. For why we use "/.", see https://github.com/gregrickaby/nextjs-github-pages/issues/10#issuecomment-1130545988
    */
-  basePath: "/.",
+  // basePath: "/.",
 
   /**
    * Disable server-based image optimization. Next.js does not support
