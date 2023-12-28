@@ -25,12 +25,13 @@
 ```
 
 ## TODO
-* [ ] Menu page
-* [ ] Monthly specials page
 * [ ] FAQ page
 * [ ] Order page
 * [ ] [Backend-less Google forms](https://medium.com/swlh/creating-a-backend-less-contact-form-using-google-forms-852157dcbdbb)
 * [ ] Embed Instagram Feed
+* [ ] Audit styling
+* [x] Menu page
+* [x] Monthly specials page
 * [x] Mobile Nav
 * [x] Social buttons
 * [x] Mobile homepage
