@@ -1,3 +1,6 @@
+/* https://fonts.google.com/share?selection.family=Cormorant+Garamond:ital@0;1|Raleway:wght@400;600;700 */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@0;1&family=Raleway:wght@400;600;700&display=swap');
+
 @font-face {
     font-family: "brandon-grotesque-black";
     src: url(/fonts/brandon-grotesque-black.otf) format("truetype");

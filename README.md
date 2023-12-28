@@ -8,18 +8,19 @@
 
 ```
 % nvm install 18
-% nvm use
 ```
 
 ## Running
 
 ```
+% nvm use
 % npm run dev
 ```
 
 ## Building
 
 ```
+% nvm use
 % npm run build
 ```
 
@@ -29,6 +30,7 @@
 * [ ] FAQ page
 * [ ] Order page
 * [ ] [Backend-less Google forms](https://medium.com/swlh/creating-a-backend-less-contact-form-using-google-forms-852157dcbdbb)
+* [ ] Embed Instagram Feed
 * [x] Mobile Nav
 * [x] Social buttons
 * [x] Mobile homepage

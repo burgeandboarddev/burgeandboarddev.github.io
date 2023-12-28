@@ -102,6 +102,48 @@
     border-radius: 50%;
 }
 
+.gallery_block {
+    background-color: #E8D0C8;
+    font-family: raleway, sans-serif !important;
+}
+
+.gallery_block > h1 {
+}
+
+.block_title {
+    font-family: raleway, sans-serif !important;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+.gallery_img {
+    /*height: 100%;*/
+    /*overflow: hidden;*/
+}
+
+.prices {
+    margin-top: 10px;
+}
+
+.prices > h2 {
+    font-family: raleway, sans-serif !important;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.prices > ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.even {
+    background-color: #E8D0C8;
+}
+
+.odd {
+    background-color: #F7F7F7;
+}
+
 @media (max-width: 767px) {
     .col_img {
         max-height: 400px;

@@ -37,11 +37,6 @@ export default function Layout({children}: LayoutProps) {
       <Head>
         <title>{getRouteTitle(router)}</title>
         <link rel="icon" href="/favicon.ico"/>
-
-        <link rel="stylesheet"
-              href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400italic"/>
-        <link rel="stylesheet"
-              href="https://fonts.googleapis.com/css?family=Raleway:400,700bold"/>
       </Head>
 
       <main className={styles.main}>

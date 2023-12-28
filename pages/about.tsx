@@ -8,7 +8,7 @@ const About: NextPageWithLayout = () => {
   return (
     <>
       <div className={`${styles.about_block} row text-center justify-content-center p-5 m-5`}>
-        <h1>The Creator</h1>
+        <div className={styles.block_title}>The Creator</div>
         <hr/>
         <div>
           <b>CARRIE BURGE</b> - CHEESE LOVER, ARTIST, WIFE + DOG MOM
