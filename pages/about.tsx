@@ -17,7 +17,7 @@ const About: NextPageWithLayout = () => {
           <img src="/img/carrie.webp" alt="carrie" className={styles.carrie_img}/>
         </div>
         <div className={`col-md-5 ${styles.about_text}`}>
-          In my early 20's, I discovered I had an intense love for food and entertaining. I started hosting parties for
+          In my early 20s, I discovered I had an intense love for food and entertaining. I started hosting parties for
           my
           friends and family- my main focus being on the food that was served. I loved making people feel full and happy
           and always wanted to be the perfect hostess!
