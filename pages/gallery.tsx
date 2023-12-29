@@ -38,7 +38,7 @@ Gallery.getLayout = function getLayout(page: React.ReactElement) {
   )
 }
 
-function mkItemHtml(item: MenuItem, index: Number) {
+function mkItemHtml(item: MenuItem, index: number) {
   const isEven = index % 2 == 0
   const imgUrl = `/img/${item.img}`
   const justifyCls = isEven ? "justify-content-start" : "justify-content-end"
@@ -76,13 +76,13 @@ function mkItemHtml(item: MenuItem, index: Number) {
 }
 
 type PricedItem = {
-  name: String,
-  price: String,
+  name: string,
+  price: string,
 }
 
 type MenuItem = {
-  name: String,
-  img: String,
+  name: string,
+  img: string,
   description: React.ReactElement<any, any>,
   prices?: Array<PricedItem>,
 }

@@ -103,7 +103,7 @@ const Contact: NextPageWithLayout = () => {
               <label htmlFor="product">Select a product</label>
               <select id="product" className="form-control" value={product}
                       onChange={(e) => setProduct(e.target.value)}>
-                <option value="" disabled="">Choose an option</option>
+                <option value="" disabled={true}>Choose an option</option>
                 {PRODUCT_TYPES.map(productName =>
                   <option key={productName} value={productName}>{productName}</option>
                 )}
