@@ -47,7 +47,7 @@ export default function Layout({children}: LayoutProps) {
           <Container fluid={true}>
             <Navbar.Brand>
               {socialIcons.map(i =>
-                <a href={i.url} className="">
+                <a key={i.name} href={i.url} className="">
                   <img alt={i.name} src={i.img}/>
                 </a>
               )}
@@ -58,7 +58,8 @@ export default function Layout({children}: LayoutProps) {
                 {
                   Object.keys(routeTitles).map(k =>
                     <Nav.Link href={k}
-                              className={`text-center p-4 ${router.pathname == k ? "active" : ""}`}>
+                              key={routeTitles[k]}
+                              className={`text-center p-4 ${router.pathname == k ? 'active' : ''}`}>
                       {routeTitles[k]}
                     </Nav.Link>
                   )
