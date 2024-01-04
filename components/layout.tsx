@@ -1,9 +1,10 @@
 import Head from 'next/head'
 import styles from '../styles/Styles.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React from 'react';
+import React, {useState} from 'react';
 import {NextRouter, useRouter} from "next/router";
 import {Container, Nav, Navbar} from "react-bootstrap";
+import {mkGoogleFormPostHandler} from "./google-forms";
 
 type LayoutProps = {
   children: React.ReactNode
@@ -32,6 +33,29 @@ function getRouteTitle(router: NextRouter): String {
 
 export default function Layout({children}: LayoutProps) {
   const router = useRouter();
+
+  const [subscribeEmail, setSubscribeEmail] = useState("")
+
+  let handleSubscribe = mkGoogleFormPostHandler({
+    formId: '1FAIpQLSeaVSDC_huUEyiVfxyFhkUa7YHFCs5xoB6JMxO-6xrD9gD74g',
+    getEntries: async () => {
+      return {
+        'entry.2079516414': subscribeEmail,
+      }
+    },
+    precondition: async () => {
+      return subscribeEmail.indexOf('@') > 0
+    },
+    onSuccess: async () => {
+      // TODO: Better success popup
+      alert("You've been added to our mailing list, please allow a few days for processing, thank you!")
+    },
+    onFailure: async () => {
+      // TODO: Better error popup
+      alert("Failed to add you to the mailing list; please review your information and try again.")
+    }
+  })
+
   return (
     <>
       <Head>
@@ -79,9 +103,14 @@ export default function Layout({children}: LayoutProps) {
             <input type="email"
                    className={`form-control mb-1 ${styles.subscribe_for_updates_email}`}
                    id="subscribe_for_updates_email"
-                   placeholder="Email Address"/>
+                   placeholder="Email Address"
+                   onChange={(e) => setSubscribeEmail(e.target.value)}
+                   onKeyUp={(e) => {
+                     if (e.key === "Enter") return handleSubscribe(e)
+                   }}/>
             <p className="text-center">
-              <a className={`btn btn-dark ${styles.subscribe_now_btn}`}>
+              <a className={`btn btn-dark ${styles.subscribe_now_btn}`}
+                 onClick={handleSubscribe}>
                 Subscribe Now
               </a>
             </p>

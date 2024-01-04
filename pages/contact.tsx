@@ -1,6 +1,7 @@
 import styles from '../styles/Styles.module.css';
 import {NextPageWithLayout} from "./_app";
 import Layout from "../components/layout";
+import {mkGoogleFormPostHandler} from "../components/google-forms";
 import React, {useState} from 'react';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -14,8 +15,6 @@ const PRODUCT_TYPES = [
   'Grazing Letter/Number',
 ]
 
-const GOOGLE_FORM_URL = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSeIKB0gJZB5k0weTux1VrYoxZqKoyYBHrvEzmZHAEoouXkDig/formResponse'
-
 const Contact: NextPageWithLayout = () => {
   const [firstName, setFirstName] = useState("")
   const [lastName, setLastName] = useState("")
@@ -24,36 +23,36 @@ const Contact: NextPageWithLayout = () => {
   const [date, setDate] = useState(null as (Date | null))
   const [details, setDetails] = useState("")
 
-  let handleSubmit = async (e) => {
-    e.preventDefault()
-    const data = new URLSearchParams();
-    data.append('entry.1394526614', firstName)
-    data.append('entry.1026529759', lastName)
-    data.append('entry.147105571', email)
-    data.append('entry.1254044019', product)
-    data.append('entry.990922482_year', date.getFullYear().toString())
-    data.append('entry.990922482_month', (date.getMonth() + 1).toString())
-    data.append('entry.990922482_day', date.getDate().toString())
-    data.append('entry.69462591', details)
-    try {
-      let res = await fetch(GOOGLE_FORM_URL, {
-        method: 'POST',
-        body: data,
-        mode: 'no-cors',
-      })
-      alert('Order placed, thank you!')
-      // TODO: We need to use a CORS proxy so we can read the response and indicate if there was an error.
-      // if (res.ok) {
-      //   // TODO: success popup
-      //   alert('Order placed, thank you!')
-      // } else {
-      //   // TODO: error popup
-      //   alert('Order failed!')
-      // }
-    } catch (err) {
-      console.log(err);
+  let handleSubmit = mkGoogleFormPostHandler({
+    formId: '1FAIpQLSeIKB0gJZB5k0weTux1VrYoxZqKoyYBHrvEzmZHAEoouXkDig',
+    getEntries: async () => {
+      return {
+        'entry.1394526614': firstName,
+        'entry.1026529759': lastName,
+        'entry.147105571': email,
+        'entry.1254044019': product,
+        'entry.990922482_year': date.getFullYear().toString(),
+        'entry.990922482_month': (date.getMonth() + 1).toString(),
+        'entry.990922482_day': date.getDate().toString(),
+        'entry.69462591': details,
+      }
+    },
+    precondition: async () => {
+      return firstName.trim().length > 0
+        && lastName.trim().length > 0
+        && email.indexOf('@') > 0
+        && product.trim().length > 0
+        && date >= new Date()
+    },
+    onSuccess: async () => {
+      // TODO: Better success popup
+      alert("Order placed, thank you!")
+    },
+    onFailure: async () => {
+      // TODO: Better error popup
+      alert("Failed to place order! Please review your information and try again.")
     }
-  }
+  })
 
   return (
     <>
