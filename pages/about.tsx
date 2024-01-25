@@ -7,7 +7,7 @@ import Head from "next/head";
 const About: NextPageWithLayout = () => {
   return (
     <>
-      <div className={`${styles.about_block} row text-center justify-content-center p-5 m-5`}>
+      <div className={`${styles.about_block} row text-center justify-content-center p-2`}>
         <div className={styles.block_title}>The Creator</div>
         <hr/>
         <div>
