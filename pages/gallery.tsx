@@ -6,11 +6,11 @@ import React from 'react';
 const Gallery: NextPageWithLayout = () => {
   return (
     <>
-      <div className={`${styles.gallery_block} row text-center justify-content-center p-5 m-5`}>
+      <div className={`${styles.gallery_block} row text-center justify-content-center p-5`}>
         <div className={styles.block_title}>Boards, Tables + More</div>
       </div>
-      <div className="text-center m-5 p-5">
-        <div className="col-6 m-auto">
+      <div className="text-center">
+        <div className="p-2 m-auto">
           <p>
             All of our boards are designed to fit any occasion. Whether it be a night in,
             work luncheon, a picnic in the park, birthday party or gathering- we are guaranteed
@@ -41,11 +41,11 @@ Gallery.getLayout = function getLayout(page: React.ReactElement) {
 function mkItemHtml(item: MenuItem, index: number) {
   const isEven = index % 2 == 0
   const imgUrl = `/img/${item.img}`
-  const justifyCls = isEven ? "justify-content-start" : "justify-content-end"
-  const img =
-    <div className={`col-5 p-0 ${justifyCls}`}>
+  const mkImg = (cls) => (
+    <div className={`col-sm-5 p-0 ${cls}`}>
       <img className={`img-fluid ${styles.gallery_img}`} src={imgUrl} alt={item.name}/>
     </div>
+  )
   const prices = item.prices ? (
     <div className={styles.prices}>
       <h2>PRICES</h2>
@@ -57,7 +57,7 @@ function mkItemHtml(item: MenuItem, index: number) {
     </div>
   ) : (<></>)
   const descr = (
-    <div className="col-7">
+    <div className="col-sm-7">
       <div className="text-center">
         <h1 className={styles.block_title}>{item.name}</h1>
         {item.description}
@@ -65,12 +65,18 @@ function mkItemHtml(item: MenuItem, index: number) {
       </div>
     </div>
   )
-  const elems = isEven ? [img, descr] : [descr, img]
   const rowCls = isEven ? styles.even : styles.odd;
+  // The trick here is that we generate two image elements and left/right classes.
+  // By default, the CSS will `display: none` the `.even .right` and `.odd .left`
+  // so we get alternating sides on desktop. We will use a media query so that
+  // on mobile platforms we will `display: block` for `.odd .left` and `display: none`
+  // for `.odd .right`, this way the elements come out stacked and do not alternate
+  // on mobile.
   return (
-    <div className={`row mb-4 d-flex align-items-center ${justifyCls} ${rowCls}`}>
-      {elems[0]}
-      {elems[1]}
+    <div className={`row mb-4 d-flex align-items-center ${rowCls}`}>
+      {mkImg(styles.left)}
+      {descr}
+      {mkImg(styles.right)}
     </div>
   )
 }
@@ -210,7 +216,7 @@ const items: Array<MenuItem> = [
     ]
   },
   {
-    name: 'Grazing Letters/Numbers',
+    name: 'Grazing Letters / Numbers',
     img: 'menu-grazing-letters-numbers.webp',
     description: <>
       Our Grazing Letters/Numbers are the perfect personalized gift/treat for any occasion!

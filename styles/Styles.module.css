@@ -144,6 +144,15 @@
     background-color: #F7F7F7;
 }
 
+/* N.B. See mkItemHtml in gallery.tsx */
+.even .right {
+    display: none;
+}
+
+.odd .left {
+    display: none;
+}
+
 @media (max-width: 767px) {
     .col_img {
         max-height: 400px;
@@ -165,6 +174,15 @@
 
     .about_text {
         font-size: small;
+    }
+
+    /* N.B. See mkItemHtml in gallery.tsx */
+    .odd .left {
+        display: block;
+    }
+
+    .odd .right {
+        display: none;
     }
 }
 
